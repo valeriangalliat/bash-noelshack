@@ -10,7 +10,7 @@ function parse {
     echo "$1" | sed -r "s/$search/$replace/g"
 }
 
-file="$1"
+file=$1
 
 if [ ! -f "$file" ]; then
     echo "Invalid file." >&2
@@ -20,4 +20,4 @@ fi
 url=$(upload "$file")
 url=$(parse "$url")
 
-echo $url
+echo "$url"
