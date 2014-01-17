@@ -22,5 +22,5 @@ Example
 -------
 
 ```sh
-noelshack-up foo.png
+noelshack foo.png
 ```
