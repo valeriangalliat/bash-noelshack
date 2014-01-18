@@ -1,5 +1,5 @@
-NoelShack Upload
-================
+NoelUp
+======
 
 Upload a picture on [NoelShack](http://www.noelshack.com/).
 
@@ -22,5 +22,5 @@ Example
 -------
 
 ```sh
-noelshack foo.png
+noelup foo.png
 ```
