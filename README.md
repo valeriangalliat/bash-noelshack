@@ -18,8 +18,8 @@ Options
 
 1. File to upload
 
-Example
--------
+Examples
+--------
 
 ```sh
 noelup foo.png
