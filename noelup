@@ -1,6 +1,4 @@
-#!/usr/bin/env sh
-
-set -e
+#!/bin/sh -e
 
 # $1: File to upload
 upload() {
