@@ -1,25 +1,31 @@
 #!/bin/sh -e
 
-# $1: File to upload
+#
+# 1. File to upload.
+#
 upload() {
     file=$1; shift
     curl -F "fichier=@$file" http://www.noelshack.com/api.php 2> /dev/null
 }
 
-# $1: Gallery URL to convert to raw URL
+#
+# 1. Gallery URL to convert to raw URL.
+#
 parse() {
     url=$1; shift
-    search="www\.noelshack\.com\/([0-9]+)-([0-9]+)-(.+)"
-    replace="image\.noelshack\.com\/fichiers\/\1\/\2\/\3"
+    search='www\.noelshack\.com\/([0-9]+)-([0-9]+)-(.+)'
+    replace='image\.noelshack\.com\/fichiers\/\1\/\2\/\3'
     echo "$url" | sed -r "s/$search/$replace/g"
 }
 
-# $1: File to upload
+#
+# 1. File to upload.
+#
 main() {
     file=$1; shift
 
     if [ ! -f "$file" ]; then
-        echo "Invalid file." >&2
+        echo 'Invalid file.' >&2
         exit 1
     fi
 
