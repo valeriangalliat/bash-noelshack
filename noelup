@@ -24,6 +24,13 @@ parse() {
 main() {
     file=$1; shift
 
+    if echo "$file" | grep -qE '^\w+://'; then
+        url=$file
+        mkdir -p /tmp/noelup
+        file=/tmp/noelup/$(basename "$url")
+        curl -so "$file" "$url"
+    fi
+
     if [ ! -f "$file" ]; then
         echo 'Invalid file.' >&2
         exit 1
