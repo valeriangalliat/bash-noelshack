@@ -13,9 +13,9 @@ upload() {
 #
 parse() {
     url=$1; shift
-    search='www\.noelshack\.com\/([0-9]+)-([0-9]+)-(.+)'
+    search='www\.noelshack\.com\/\([0-9]*\)-\([0-9]*\)-\(.*\)'
     replace='image\.noelshack\.com\/fichiers\/\1\/\2\/\3'
-    echo "$url" | sed -r "s/$search/$replace/g"
+    echo "$url" | sed "s/$search/$replace/g"
 }
 
 #
