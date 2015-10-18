@@ -5,7 +5,7 @@
 #
 upload() {
     file=$1; shift
-    curl -sF "fichier=@$file" http://www.noelshack.com/api.php
+    curl --progress-bar -F "fichier=@$file" http://www.noelshack.com/api.php
 }
 
 #
